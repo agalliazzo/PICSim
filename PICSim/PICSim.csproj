@@ -49,14 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPUStack.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="OpcodeDestinations.cs" />
+    <Compile Include="OpcodeType.cs" />
+    <Compile Include="PIC16FCpu.cs" />
+    <Compile Include="PIC16FInstruction.cs" />
+    <Compile Include="PIC16FInstructionCollection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reg_Generic.cs" />
+    <Compile Include="Reg_Option.cs" />
+    <Compile Include="Reg_Status.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,6 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CusotmControls\CusotmControls.csproj">
+      <Project>{805CB249-5AD9-4A2E-A502-C762BC9E5EAA}</Project>
+      <Name>CusotmControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

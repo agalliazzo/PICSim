@@ -33,9 +33,13 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lstProgramMemory = new System.Windows.Forms.ListBox();
             this.btnStartProgram = new System.Windows.Forms.Button();
-            this.lblStatusReg = new System.Windows.Forms.Label();
             this.lblProgramCounter = new System.Windows.Forms.Label();
-            this.lblMem = new System.Windows.Forms.Label();
+            this.statusRegVisualizer = new CusotmControls.RegVisualizer.RegVisualizer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.regVisualizer1 = new CusotmControls.RegVisualizer.RegVisualizer();
+            this.label3 = new System.Windows.Forms.Label();
+            this.regVisualizer2 = new CusotmControls.RegVisualizer.RegVisualizer();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +49,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1056, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,45 +82,88 @@
             this.btnStartProgram.Name = "btnStartProgram";
             this.btnStartProgram.Size = new System.Drawing.Size(98, 27);
             this.btnStartProgram.TabIndex = 2;
-            this.btnStartProgram.Text = "Start program";
+            this.btnStartProgram.Text = "Step";
             this.btnStartProgram.UseVisualStyleBackColor = true;
             this.btnStartProgram.Click += new System.EventHandler(this.btnStartProgram_Click);
-            // 
-            // lblStatusReg
-            // 
-            this.lblStatusReg.AutoSize = true;
-            this.lblStatusReg.Location = new System.Drawing.Point(316, 67);
-            this.lblStatusReg.Name = "lblStatusReg";
-            this.lblStatusReg.Size = new System.Drawing.Size(63, 13);
-            this.lblStatusReg.TabIndex = 3;
-            this.lblStatusReg.Text = "Status Reg:";
             // 
             // lblProgramCounter
             // 
             this.lblProgramCounter.AutoSize = true;
-            this.lblProgramCounter.Location = new System.Drawing.Point(316, 80);
+            this.lblProgramCounter.Location = new System.Drawing.Point(316, 57);
             this.lblProgramCounter.Name = "lblProgramCounter";
             this.lblProgramCounter.Size = new System.Drawing.Size(24, 13);
             this.lblProgramCounter.TabIndex = 3;
             this.lblProgramCounter.Text = "PC:";
             // 
-            // lblMem
+            // statusRegVisualizer
             // 
-            this.lblMem.AutoSize = true;
-            this.lblMem.Location = new System.Drawing.Point(316, 126);
-            this.lblMem.Name = "lblMem";
-            this.lblMem.Size = new System.Drawing.Size(24, 13);
-            this.lblMem.TabIndex = 4;
-            this.lblMem.Text = "PC:";
+            this.statusRegVisualizer.BitLedSize = 40;
+            this.statusRegVisualizer.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.statusRegVisualizer.LedColor = System.Drawing.Color.Red;
+            this.statusRegVisualizer.Location = new System.Drawing.Point(404, 74);
+            this.statusRegVisualizer.Name = "statusRegVisualizer";
+            this.statusRegVisualizer.Size = new System.Drawing.Size(370, 50);
+            this.statusRegVisualizer.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(316, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Status Register:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(316, 148);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "PORTA";
+            // 
+            // regVisualizer1
+            // 
+            this.regVisualizer1.BitLedSize = 40;
+            this.regVisualizer1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.regVisualizer1.LedColor = System.Drawing.Color.Red;
+            this.regVisualizer1.Location = new System.Drawing.Point(404, 130);
+            this.regVisualizer1.Name = "regVisualizer1";
+            this.regVisualizer1.Size = new System.Drawing.Size(370, 50);
+            this.regVisualizer1.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(316, 204);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "PORTB";
+            // 
+            // regVisualizer2
+            // 
+            this.regVisualizer2.BitLedSize = 40;
+            this.regVisualizer2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.regVisualizer2.LedColor = System.Drawing.Color.Red;
+            this.regVisualizer2.Location = new System.Drawing.Point(404, 186);
+            this.regVisualizer2.Name = "regVisualizer2";
+            this.regVisualizer2.Size = new System.Drawing.Size(370, 50);
+            this.regVisualizer2.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblMem);
+            this.ClientSize = new System.Drawing.Size(1056, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.regVisualizer2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.regVisualizer1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.statusRegVisualizer);
             this.Controls.Add(this.lblProgramCounter);
-            this.Controls.Add(this.lblStatusReg);
             this.Controls.Add(this.btnStartProgram);
             this.Controls.Add(this.lstProgramMemory);
             this.Controls.Add(this.menuStrip1);
@@ -138,9 +185,13 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ListBox lstProgramMemory;
         private System.Windows.Forms.Button btnStartProgram;
-        private System.Windows.Forms.Label lblStatusReg;
         private System.Windows.Forms.Label lblProgramCounter;
-        private System.Windows.Forms.Label lblMem;
+        private CusotmControls.RegVisualizer.RegVisualizer statusRegVisualizer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private CusotmControls.RegVisualizer.RegVisualizer regVisualizer1;
+        private System.Windows.Forms.Label label3;
+        private CusotmControls.RegVisualizer.RegVisualizer regVisualizer2;
     }
 }
 
