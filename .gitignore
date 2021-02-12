@@ -3,3 +3,7 @@
 ################################################################################
 
 /CusotmControls/bin/Debug
+/CusotmControls/obj/Debug
+/packages/IntelHexFormatReader.2.2.3
+/PICSim/bin/Debug
+/PICSim/obj/Debug

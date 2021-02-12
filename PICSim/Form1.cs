@@ -12,10 +12,13 @@ namespace PICSim
     public partial class Form1 : Form
     {
         PIC16FCpu _cpu;
+        private const int PORTA_Addr = 0x05;
+        private const int PORTB_Addr = 0x06;
 
         public Form1()
         {
             InitializeComponent();
+            statusRegVisualizer.SetLables(new string[] { "C", "DC", "Z", "nPD", "nTO", "RP0", "RP1", "IRP" });
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -42,7 +45,6 @@ namespace PICSim
                 lstProgramMemory.Items.Add(cell.ToString("X"));
             }
 
-
             Properties.Settings.Default.LastOpenedFile = dialog.FileName;
             Properties.Settings.Default.Save();
         }
@@ -52,9 +54,12 @@ namespace PICSim
             //while (true)
             //{
             _cpu.ExecuteInstruction();
-            lblStatusReg.Text = "Status Reg: " + _cpu.StatusRegister.ToString();
-            lblProgramCounter.Text = $"PC: {_cpu.ProgramCounter.ToString("X")} ";
-            lblMem.Text = _cpu.RAMMemoryAndRegisters[6].ToString();
+            statusRegVisualizer.SetValue(_cpu.StatusRegister.Register);
+            lblProgramCounter.Text = $"PC: {_cpu.ProgramCounter:X} ";
+            regVisualizer1.SetValue(_cpu.RAMMemoryAndRegisters[PORTA_Addr].Register);
+            regVisualizer2.SetValue(_cpu.RAMMemoryAndRegisters[PORTB_Addr].Register);
+            lstProgramMemory.SelectedIndex = _cpu.ProgramCounter;
+            //lblMem.Text = _cpu.RAMMemoryAndRegisters[6].ToString();
             //}
         }
     }

@@ -17,7 +17,7 @@ namespace PICSim
 
         public new string ToString()
         {
-            return Convert.ToString(Register, 2);
+            return Convert.ToString(Register, 2).PadLeft(8, '0');
         }
     }
 }
